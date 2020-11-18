@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fuente de texto -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet"> 
+    <!-- css style -->
+    <link rel="stylesheet" href="../../styles/styles.css">
+    
+    
+
+    <title>Resumen clase 2</title>
+</head>
+<body>
+    <nav class="nav-header">
+        <div class="nav-h-container">
+            <p>
+                git desarrollo colaborativo, resumen clase 2, alumni
+            </p>
+        </div>
+    </nav>
+    <header>
+        <h1>BRANCHES</h1>
+        <br>
+        <p>
+            este capitulo trata de como trabajar con un repositorio de otra persona, como clonar y trabajar sobre ramas y luego 
+        </p>
+    </header>
+    <main>
+        
+        <div class="container">
+            <h3>git clone</h3>
+            <p>
+                es el comando que se usa para clonar un repo remoto
+                <b>git clone url del repo</b>
+                esto trae el repo con el nombre original.
+                También se le puede cambiar el nombre con el siguiente comando
+                <b>git clone urlProyecot nuevoAslias</b>
+            </p>
+            <br>
+            <p>
+                el comando <b>git branch -r</b>
+                muestra las branchs dentro del repo clonado
+            </p>
+            <br>
+            <h3>fork</h3>
+            <p>
+                el fork se usa cuando queremos contribuir a un proyecto al cual no tenemos permiso de pushear o editar, entonces lo que pasa es que al darle fork el proyecto se copia el proyecto en nuestro usuario de github o cualquier otro cliente de git, en otras palabras se crea una rama exacta del proyecto principal y asi podemos manipularla a nuestro antojo.
+                y cuando estamos seguros de subir los cambios hechos al proyecto principal o la rama 'main' le damos el comando 'pull request', que es el que le avisa al admin del proyecto en cuestion que hay alguien que quiere subir los cambios que hizo y 'mergearlo' con el proyecto.
+                y el admin decide si se aprueba o no dichos cambios hechos por otros usuarios. <br>
+                En cambio al clonar un repositorio cualquiera lo que hacemos es bajarlo a nuestro equipo local y no hay manera de hacer un pull request porque eso es para cuando un repo ha sido 'forkiado'.
+            </p>
+            <br>
+            <ul>
+                <li>
+                    ir a la pagina del proyecto original
+                </li>
+                <li>
+                    click en el botón fork
+                    <ul class="ul-image">
+                        <li>
+                            <img src="./resources/fork.png" alt="img del btn fork" >
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    nos va a redirigir a nuestro perfil con el nuevo proyecto
+                </li>
+            </ul>
+            <br>
+            <h3>flujo de desarrollo colaborativo</h3>
+            <ol>
+                <li>
+                    fork del proyecto.
+                </li>
+                <li>
+                    Creamos un branch nuevo desde el branch ​master.
+                </li>
+                <li>
+                    Hacemos algunos commits para mejorar el proyect.
+                </li>
+                <li>
+                    Hacemos un push de nuestro branch a nuestro proyecto de GitHub.
+                </li>
+                <li>
+                    Abrimos un Pull Request en GitHub.
+                </li>
+                <li>
+                    Generamos una discusión al respecto de nuestro trabajo realizado yalternativamente seguimos haciendo más commits.
+                </li>
+                <li>
+                    Sincronizamos el branch ​master​ nuevamente a nuestro Fork.
+                </li>
+            </ol>
+            <br>
+            <h3>fetch</h3>
+            <p>
+                el fetch sirve para traer los commits que otros desarrolladores hayan hecho en el repo remoto.
+                <b>git fetch alias/nombre del repo</b>
+                este comando solo descarga lo que los demas hicieron pero no te junta con lo que llevas hecho, eso se hace manualmente.
+            </p>
+            <br>
+            <h3>pull</h3>
+            <p>
+                el pull es para descargar los nuevos cambios que no tenemos en el repositorio local al igual que el fetch pero ademas de descargarlo integra automaticamente lo que tenemos con el repo remoto.
+            </p>
+            <br>
+            <h3>pull request</h3>
+            <p>
+                este comando es para hacer un pedido de push al dueño o administrador del proyecto... para hacerlo el cliente de github va a darnos la opcion de escribir en detalle los cambios que hemos hecho, luego le damos al boton verde de 'pull request'al hacerlo el owner ve los detalles del request y decide y si decide nos va a llegar una notificacion a nuestro perfil de github.
+            </p>
+            <br>
+            <h3>flujo de trabajo / ramas</h3>
+            <p>
+
+            </p>
+        </div>
+        <nav class="nav">
+            <h2>Clases</h2>
+            <ul>
+                <li>
+                    <a href="">
+                        clase 1 cursada
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        clase 1 alumni
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        clase 2 cursada
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        clase 2 alumni
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        Clase 3 cursada 
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        Clase 3 alumni
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        Clase 4 cursada
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        Clase 4 alumni
+                    </a> 
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+</body>
+</html>

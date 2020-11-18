@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet"> 
+    <!-- css style -->
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <title>Resumen clase 1</title>
+</head>
+<body>
+    <nav class="nav-header">
+        <div class="nav-h-container">
+            <p>
+                git desarrollo colaborativo, resumen clase 1, alumni
+            </p>
+        </div>
+    </nav>
+    <header>
+        <h1>GIT</h1>
+            <p>
+                git es un sistema de control de versiones creado por linux torvalds.
+                Además de guardar las versiones de nuestro proyecto, también sirve para el desarrollo colaborativo, o trabajo remoto.
+                <br>
+                El sistema funciona con un codigo fuente, que se llama 'main' en github o 'master' en github desktop, el cual es el codigo principal del proyecto y que solo se toca para enviar a producción o cambiar la versión del proyecto, es por eso que cuando se trabaja en equipo lo que se hace es trabajar sobre una rama o 'branch' del main, que es exactamente el mismo codigo solo que es una copia, de manera que si uno comete un error en una rama, no afecta a la principal que es el main.
+                <br>
+                Se puede usar directamente desde el navegador en la pagina de github, la aplicación o cliente de github desktop o el bash que es la consola de comandos de git...  hay más clientes que se pueden usar pero los ideales serian el bash o desde vscode, uno porque es universal y el otro por el flujo de trabajo que se usa ya que no hay necesidad de salir de nuestro editor de código para usar git. <br>
+                No hay que confundir git con github, github es solo uno de muchas aplicaciones para almacenar los repositorios.
+                <br>
+                Lo ideal es usar el bash para tener una idea universal de como hacerlo en caso de no tener la aplicación.
+                <br>s
+                cuando se hacen commits en git es como hacer un snapshot del proyecto en ese momento...
+            </p>
+    </header>
+    <main>
+        <div class="container">
+            <h3>Repositorio</h3>
+            <p>
+                dentro de la carpeta del proyecto se debe alojar otra carpeta .git, de esta manera se sabe que es un repositorio de git, esta carpeta .git se aloja dentro del proyecto porque es desde allí donde guarda todo el historial de movimientos que hagamos dentro del proyecto, si se elimina esta carpeta se elimina todo el historial del proyecto.  
+            </p>
+            <br>
+            <h3>Un directorio .git tiene una estructura similar a la siguiente:</h3>
+            <br>
+                <ul >
+                    <li class="ul-image">
+                        <img src="./resources/repositorio.png" alt="imagen del contenido de carpeta git">
+                    </li>
+                    <br>
+                    <li>
+                        <i>objects/</i>
+                        <ul>
+                            <li>
+                                En este directorio se almacenan los datos de sus objetos ​GIT​: todo el contenido de losarchivos que haya registrado, sus commits, branches y tags.<b>/[0-9a-f][0-9a-f]</b>
+                                Un objeto recién creado se almacena en su propio archivo. Los objetos se colocan en subdirectorios 256 utilizando los dos primeros caracteres del nombre de objeto SHA1 para mantener el número de entradas de directorio en los objetos en un número manejable. Los objetos que se encuentran aquí a menudo se denominan objetos desempaquetados o sueltos.
+                                <b>objects/packLos</b> los archivos que almacenan muchos objetos en forma comprimida, junto con los archivos de índice para permitir el acceso aleatorio, se encuentran en este directorio.
+                                <b>objects/info</b> La información adicional sobre el objeto almacenado se coloca en este directorio.
+                            </li>
+                        </ul>
+                    </li>
+                        
+                    <li>
+                        <i>refs</i>
+                        <ul>
+                            <li>
+                                Las referencias se almacenan en los subdirectorios de este directorio. El comando git prunesabe que debe preservar los objetos accesibles a partir de las referencias que se encuentranen este directorio y sus subdirectorios
+                                <b>refs/heads/</b>
+                                contiene objetos de commit
+                                <b>refs/tags</b>
+                                contiene cualquier nombre de objeto
+                                <b>refs/remotes</b> 
+                                contiene los objetos de confirmación de las ramas copiadas desde un repositorio remoto
+                            </li>
+                        </ul>
+                    </li>
+                        
+                        
+                    <li>
+                        <i>Archivo​ ​HEAD</i>
+                        <ul>
+                            <li>
+                                Este archivo contiene una referencia al branch en la que se encuentra actualmente. Esto ledice a ​GIT ​qué usar como padre de su próximo commit
+                            </li>
+                        </ul>
+                    </li>                            
+                    <li>
+                        <i>
+                            archivo de configuración config
+                        </i>
+                        <ul>
+                            <li>
+                                Este es el archivo de configuración principal de ​GIT​. Mantiene opciones específicas de ​GITpara su proyecto, como sus controles remotos, configuraciones de inserción, branches deseguimiento y más. Su configuración se cargará primero desde este archivo, luego desde unarchivo ~ / .gitconfig y luego desde un archivo / etc / gitconfig, si existe.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <i>hooks/</i>
+                        <ul>
+                            <li>
+                                Este directorio contiene scripts de shell que se invocan después de los comandos ​GITcorrespondientes. Por ejemplo, después de ejecutar un commit, ​GIT ​intentará ejecutar elscript posterior a la confirmación.
+                            </li>
+                        </ul>
+                    </li>
+                        
+                    <li>
+                        <i>archivo de índice index</i>
+                        <ul>
+                            <li>
+                                El index ​GIT ​se utiliza como Stage Area entre su Working Directory  y su repositorio. Puede utilizar el index para crear un conjunto de cambios que desea confirmar juntos. <b>Cuando crea un commit, lo que se confirma es lo que está actualmente en el index, no lo que está en sudirectorio de trabajo.</b> Es un archivo binario que contiene una lista ordenada de nombres de ruta, cada uno con permisos y el SHA-1 de un objeto blob
+                            </li>
+                        </ul>
+                    </li>
+                            
+                    <li>
+                        <i>info/</i>
+                        <ul>
+                            <li>
+                                registra la info adicional sobre el repo.
+                            </li>
+                        </ul>
+                    </li>
+                        
+                    <li>
+                        <i>logs/</i>
+                        <ul>
+                            <li>
+                                Almacena los cambios realizados en las referencias en el repositorio.
+                                <b>logs/refs/heads/</b>
+                                Registra todos los cambios realizados en las diferentes puntas de rama.
+                                <b>logs/refs/tags/</b>
+                                Registra todos los cambios realizados en las diferentes etiquetas.
+                            </li>
+                        </ul>
+                    </li>
+                        
+                    <li>
+                        <i>modules</i>
+                        <ul>
+                            <li>
+                                contiene los repos git de los submodulos
+
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <br>
+                <h3>tipos de repositorios</h3>
+                <br>
+                <ul>
+                    <li>locales
+                        <ul>
+                            <li>
+                                como su nombre lo dice es un repositorio en el disco local, osea, un proyecto alojado en mi computadora
+                            </li>
+                        </ul>
+                    </li>
+                    <li>centralizados
+                        <ul>
+                            <li>
+                                era trabajo colaborativo donde el proyecto se guardaba en el servidor, entonces lo malo era que si se caia la conexion de alguien, esa persona no podia continuar su trabajo porque todo se hacia con conexion
+                            </li>
+                        </ul>
+                    </li>
+                    <li>distribuidos
+                        <ul>
+                            <li>
+                                se le permite a cada desarrollador descargar una copia local de todo el proyecto,(branch) osea se clona el proyecto asi no hay problema con la conexion, esta es la manera actual y la mas efectiva
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <br>
+                <h3>estados de un repositorio</h3>
+                <p>
+                    los principales estados de un archivo en git son...
+                </p>
+                <br>
+                <ul>
+                    <li>commited
+                        <ul>
+                            <li>
+                                es cuando los datos se almacenan en la base de datos local de manera segura.
+                                en otras palabras es cuando guardo el archivo a la base de datos de git.. hago un snapshot del archivo justo como esta guardado en el momento de la comiteada.
+                                si despues de la comiteada modifico ese mismo archivo, agregando o quitando algo de alli entonces esta listo para ser comiteado de nuevo.
+                                comando: <b>git commit -m 'nombre  del commit'</b> 
+                            <br>
+                                 <b>git commit --amend </b>
+                                sirve para modificar el log de un commit, para corregir el nombre de un commit.
+                                agarra el ultimo commit hecho y permite settearlo
+                            </li>
+                        </ul>
+                    </li>
+                    <li>modified
+                        <ul>
+                            <li>
+                                es cuando el archivo ha sido modificado pero no ha sido confirmado en la base de datos(no se ha actualizado).
+                            </li>
+                        </ul>
+                    </li>
+                    <li>staged
+                        <ul>
+                            <li>
+                                es cuando el archivo modificado esta listo para ser pusheado, osea que esta en el 'camerino' listo para ser enviado o guardado.
+                                en el bash el nombre del archivo cambia a color verde.
+                                el comando para mandar a stage es 
+                                <b>git add nombre del archivo</b>
+                            </li>
+                            <li>
+                                si quiero agregar una carpeta nueva con todo su contenido al stage le doy <b>git add nombre de la carpeta</b>. <br>
+                                si quiero pasar el stage a un archivo de la carpeta especificada lo hago con lo siguiente
+                                <b>git add nombre de la carpeta/nombre del archivo</b> <br>
+                                <b>git add -i</b> es un comando que muestra con mas detalle los cambios que podemos realizar en el repo
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <br>
+                <p>
+                    Estos anteriores estados pertenecen a las principales secciones de un proyecto git.
+                    el comando para ver los estados en el bash es <b>git status</b>
+                </p>
+                <br>
+                <ul>
+                    <li>el directorio .git</li>
+                    <li>working directory</li>
+                    <li>stage area</li>
+                </ul>
+                <br>
+                <img src="./resources/estados.png" alt="imagen-estados">
+                <br>
+                <p>
+                    en resumen, el primer paso es estar trabajando en el proyecto local, luego con git add mando el archivo al stage area y por ultimo lo guardo en el repositorio de git al darle git commit y haciendo git pull lo mando al repo remoto de github.
+                </p>
+                <br>
+                <h3>Grafos</h3>
+                <p>
+                    Un grafo es un conjunto de objetos llamados vertices o nodos que estan unidos por enlances llamados aristas y representan relaciones binarias entre elementos de un conjunto.
+                    <br>
+                    por ejemplo una red de computadoras puede ser un grafo en donde los nodos son las pc y los aristas son las conexiones o relaciones que tienen con los otros.
+                </p>
+                <br>
+                <img src="./resources/grafo.png" alt="grafo img">
+                <br>
+
+                <h3>comandos para la configuracion inicial</h3>
+                <br>
+                <ul>
+                    <li>cambiar el nombre de usuario
+                        <ul>
+                            <li>
+                                git config --global user.name 'nombre de usuario'.
+                            </li>   
+                        </ul> 
+                    </li>
+                    <li>settear el email del usuario
+                        <ul>
+                            <li>
+                                git config --global user.email 'email del usuario'
+                            </li>
+                        </ul>
+                    </li>
+                    <li>settear la preferencia del editor de codigo
+                        <ul>
+                            <li>
+                                git config --core.editor 'path del editor de codigo'
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <br>
+                <p>
+                    para listar los cambios hechos el comando es <b>git config --list</b> /<b>git config --list --show-origin.</b>
+                </p>
+                <br>
+                <h3>registro de cambios</h3>
+                <ul>
+                    <li>git log
+                        <ul>
+                            <li>muestra los commits hechos, la fecha y quien los hizo, del ultimo al primero los lista</li>
+                        </ul>
+                    </li>
+                </ul>
+                <br>
+                <p>
+                    este comando viene con muchos atajos y parámetros que podemos agregar para que lasalida en la línea de comandos no sea tan abundante. Particularmente las opciones de--oneline y --graph son sumamente útiles para mostrar información abreviada sobre cadacommit y para poder ver un gráfico ASCII mostrándonos nuestro historial de commits.
+                </p>
+                <br>
+                <h3>repositorios remotos</h3>
+                <p>
+                    son repositorios guardados en los clientes de git y permiten el desarrollo colaborativo.
+                    <br>
+                    lo siguiente es para configurar un remoto.
+                    Ahora que nuestro proyecto está almacenado en GitHub, podemos darle la URL a cualquierpersona con la que queramos compartir nuestro trabajo. Cada proyecto en GitHub esaccesible a través de HTTPS como
+                </p>
+                <br>
+                <img src="./resources/remoto.png" alt="">
+                <br>
+                <ul>
+                    <li>git remote add                          <i>alias     del proyecto</i>
+                        https://github.com/usuario/nombre_del_proyecto
+                    </li>
+                    <li>
+                        git remote -v, muestra el listado de proyectos remotos que tengamos en nuestro repo
+                    </li>
+                    <li>
+                        git push remote branch
+                        permite hacer un push al proyecto, si nadie mas ha hecho uno, usar solo cuando es un proyecto en el que trabajas solo y por lo tanto tienes todos los permisos
+                    </li>
+                </ul>
+                <br>
+        </div>    
+        <nav class="nav">
+            <h2>Clases</h2>
+            <ul>
+                <li>
+                    <a href="">
+                        clase 1 cursada
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        clase 1 alumni
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        clase 2 cursada
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        clase 2 alumni
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        Clase 3 cursada 
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        Clase 3 alumni
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        Clase 4 cursada
+                    </a> 
+                </li>
+                <li>
+                    <a href="">
+                        Clase 4 alumni
+                    </a> 
+                </li>
+            </ul>
+        </nav>
+    </main>
+</body>
+</html>

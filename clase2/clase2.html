@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet"> 
     <!-- css style -->
-    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="../styles/styles.css">
     
     
 
@@ -114,8 +114,77 @@
             <br>
             <h3>flujo de trabajo / ramas</h3>
             <p>
-
+                es la manera de trabajo remoto actual, se clona el repositorio remoto a la maquina local.
             </p>
+            <br>
+            <h3>comandos</h3>
+            <ul>
+                <li>git branch
+                    <ul>
+                        <li>
+                            muestra las ramas que tengo localmente.
+                        </li>
+                    </ul>
+                </li>
+                <li>git branch -r
+                    <ul>
+                        <li>muestra las ramas que tengo en el repo remoto.</li>
+                    </ul>
+                </li>
+                <li>git checkout/ git checkout nombre repo/nombre rama
+                    <ul>
+                        <li>
+                            es para ver en que rama estamos parados y poder movernos a la rama que queramos.
+                            si me muevo entre ramas y tengo cambios que no estan comiteados ni en stage git me los trae a donde me mueva..antes de movernos hacer el commit, para que no se vaya con nosotros a las ramas que nos movamos.
+                            
+                        </li>
+                    </ul>
+                </li>
+                <li>git merge repo/rama
+                    <ul>
+                        <li>
+                            cuando queremos subir los cambios de nuestra rama a la rama main, hacemos un merge. para hacerlo hay que estar parado en la rama a la que queremos mergear, por ejemplo, main.
+                            si hay un cambio en el main, que suele suceder es que tire una bifurcacion y si no hay porblemas aparece el "fast-forward" que significa que fue mergeado con exito.
+                            lo ideal es no hacer directamente el merge, aunque trabajemos solos, lo mejor es hacer un pull request completo con detalles para que podamos analizar mejor los cambios antes de subirlo a produccion.
+                        </li>
+                    </ul>
+                </li>
+                <li>git fetch
+                    <ul>
+                        <li>
+                            trae las nuevas referencias nuevas del repo remoto al local.
+                        </li>
+                    </ul>
+                </li>
+                <li>git pull
+                    <ul>
+                        <li>
+                            trae todos los cambios que se hicieron en el repo remoto.
+                        </li>
+                    </ul>
+                </li>
+                <li>git push
+                    <ul>
+                        <li>
+                            te sube todo lo que tengo en mi rama para subir, usar cuidadosamente.
+                        </li>
+                    </ul>
+                </li>
+                <li>git branch -d nombrerama
+                    <ul>
+                        <li>
+                            eliminar una rama
+                        </li>
+                    </ul>
+                </li>
+                <li>git branch nombre de la rama
+                    <ul>
+                        <li>
+                            crea una nueva rama.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
         <nav class="nav">
             <h2>Clases</h2>

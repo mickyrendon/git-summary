@@ -13,7 +13,8 @@ body{
     display: inline;
     flex-direction: column;
     justify-content:center;
-    background-color: white;
+    background-color: #fbfbfe;
+    border: 1px solid green;
     color: #000000;
 
 }

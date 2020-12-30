@@ -1,0 +1,7 @@
+una linea
+<<<<<<< Updated upstream
+otra linea
+otra linea mas
+=======
+otra linea
+>>>>>>> Stashed changes
